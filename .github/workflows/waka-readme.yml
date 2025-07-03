@@ -1,0 +1,23 @@
+name: Waka Readme
+
+on:
+  schedule:
+    # Runs at 12am IST
+    - cron: '30 18 * * *'
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+  
+jobs:
+  update-readme:
+    name: WakaTime Readme
+    runs-on: ubuntu-latest
+    steps:
+      - uses: athul/waka-readme@master
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          SHOW_TITLE: true
+          SHOW_TOTAL: true
+          SHOW_TIME: true
+          BLOCKS: ⣀⣄⣤⣦⣶⣷⣿
+          SHOW_MASKED_TIME: true
+          LANG_COUNT: 10
+          CODE_LANG: markdown
